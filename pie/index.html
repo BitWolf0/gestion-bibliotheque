@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Système de Gestion du Bibliothèque</title>
+<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>&#128218; Système de Gestion du Bibliothèque</h1>
+      <nav>
+        <a href="#livres">&#128216; Livres</a>
+        <a href="#ajouter">&#x2795; Ajouter</a>
+        <a href="#emprunts">&#128214; Emprunts</a>
+      </nav>
+    </header>
+
+    <section id="livres">
+      <h2>&#128216; Livres</h2>
+      <input
+        type="text"
+        id="search"
+        placeholder="Rechercher par titre, auteur ou catégorie"
+      />
+      <table id="booksTable">
+        <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Catégorie</th>
+            <th>Disponibilité</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="booksBody"></tbody>
+      </table>
+    </section>
+
+    <section id="ajouter">
+      <h2>&#x2795; Ajouter un livre</h2>
+      <form id="addForm">
+        <input type="text" id="title" placeholder="Titre" required />
+        <input type="text" id="author" placeholder="Auteur" required />
+        <select id="category" required>
+          <option value="">Sélectionnez une catégorie</option>
+          <option>Roman</option>
+          <option>Littérature</option>
+          <option>Science</option>
+          <option>Sciences / Société</option>
+          <option>Science-fiction & Fantasy</option>
+          <option>Informatique</option>
+          <option>Histoire</option
+          <option>Développement Personnel</option>
+          <option>Éducation</option>
+          <option>Philosophie</option>
+          <option>Art</option>
+        </select>
+        <button type="submit" class="add-btn">Ajouter le livre</button>
+      </form>
+      <div id="addMessage" class="hidden"></div>
+    </section>
+
+    <section id="emprunts">
+      <h2>&#128214; Emprunts en cours</h2>
+      <table id="loansTable">
+        <thead>
+          <tr>
+            <th>Livre</th>
+            <th>Emprunteur</th>
+            <th>Date d'emprunt</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="loansBody"></tbody>
+      </table>
+      <div id="noLoans">Aucun emprunt en cours</div>
+    </section>
+
+    <div id="borrowModal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Emprunter un livre</h3>
+        <p id="bookInfo"></p>
+        <input
+          type="text"
+          id="borrower"
+          placeholder="Nom de l'emprunteur"
+          required
+        />
+        <button id="cancelBorrow" class="cancel-btn">Annuler</button>
+        <button id="confirmBorrow" class="confirm-btn">
+          Confirmer l'emprunt
+        </button>
+      </div>
+    </div>
+
+    <div id="overlay" class="hidden"></div>
+
+  <script src="script.js" defer></script>
+  </body>
+</html>
