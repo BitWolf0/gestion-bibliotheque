@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Système de Gestion du Bibliothèque</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
@@ -69,7 +68,9 @@
           <tr>
             <th>Livre</th>
             <th>Emprunteur</th>
+            <th>contact</th>
             <th>Date d'emprunt</th>
+            <th>Date de retour</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -88,6 +89,12 @@
           placeholder="Nom de l'emprunteur"
           required
         />
+        <input 
+          type="tel" 
+          id="contact" 
+          placeholder="Numéro de téléphone" 
+          required/>
+          <input type="number" name="" id="quantity" placeholder="Nombre des jours 1j/15j" min="1" max="15" required/>
         <button id="cancelBorrow" class="cancel-btn">Annuler</button>
         <button id="confirmBorrow" class="confirm-btn">
           Confirmer l'emprunt
@@ -100,4 +107,3 @@
   <script src="script.js" defer></script>
   </body>
 </html>
-
