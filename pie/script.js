@@ -147,8 +147,9 @@ confirmBorrow.addEventListener("click", () => {
   const contact = contactInput.value.trim();
   const days = parseInt(quantityInput.value);
 
-  if (!borrower || !contact || !days) {
-    alert("Veuillez remplir tous les champs.");
+  // Correction : On vérifie que days est un nombre positif
+  if (!borrower || !contact || isNaN(days) || days <= 0) {
+    alert("Veuillez remplir tous le dernier champ avec une durée valide (supérieure à 0).");
     return;
   }
 
@@ -157,6 +158,8 @@ confirmBorrow.addEventListener("click", () => {
   
   const dateEmprunt = new Date();
   const dateRetour = new Date();
+  
+  // La date de retour est calculée ici
   dateRetour.setDate(dateEmprunt.getDate() + days);
 
   book.available = false;
